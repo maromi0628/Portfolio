@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>制作実績 | Portfolio</title>
+<meta name="description" content="Web制作・業務効率化ツールの制作実績（Claude Code を活用して開発）">
+<style>
+  :root { --bg: #f7f7f5; --surface: #fff; --text: #1f2328; --muted: #656d76; --line: #e4e4e0; --accent: #2f6fdb; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #111418; --surface: #1a1f26; --text: #e6e9ee; --muted: #9aa3ad; --line: #2b313a; --accent: #6a9cf0; } }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font-family: system-ui, -apple-system, "Hiragino Sans", "Noto Sans JP", sans-serif; line-height: 1.7; }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 48px 16px; }
+  h1 { font-size: 28px; margin: 0 0 8px; }
+  .intro { color: var(--muted); margin: 0 0 32px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 20px; display: flex; flex-direction: column; }
+  .card h2 { font-size: 18px; margin: 0 0 6px; }
+  .card p { color: var(--muted); font-size: 14px; margin: 0 0 12px; flex: 1; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+  .tags span { font-size: 12px; border: 1px solid var(--line); border-radius: 999px; padding: 0 10px; }
+  .links { display: flex; gap: 16px; font-size: 14px; }
+  .links a { color: var(--accent); }
+  footer { color: var(--muted); font-size: 13px; margin-top: 40px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>制作実績</h1>
+  <p class="intro">Web制作・業務効率化ツールのサンプル作品です。いずれも AI 開発ツール（Claude Code）を活用して開発し、動作確認・レビューを行っています。<br>掲載している店舗・企業・金額はすべて架空のものです。</p>
+
+  <div class="grid">
+    <article class="card">
+      <h2>便利屋のランディングページ</h2>
+      <p>地域の便利屋を想定した集客用LP。レスポンシブ対応、スクロール演出、入力→確認→完了のお問い合わせフォーム、スマホ固定CTA。</p>
+      <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>レスポンシブ</span></div>
+      <div class="links"><a href="lp-benriya/">デモを見る</a><a href="https://github.com/maromi0628/Portfolio/tree/main/lp-benriya">コード</a></div>
+    </article>
+    <article class="card">
+      <h2>企業リスト抽出ツール</h2>
+      <p>企業一覧ページから情報を取得し、表記ゆれの正規化・重複削除・除外リスト照合を行って Excel で出力する Python ツール。テスト付き。</p>
+      <div class="tags"><span>Python</span><span>スクレイピング</span><span>Excel</span><span>pytest</span></div>
+      <div class="links"><a href="https://github.com/maromi0628/Portfolio/tree/main/list-extractor">コードと説明</a></div>
+    </article>
+    <article class="card">
+      <h2>案件・売上ダッシュボード</h2>
+      <p>フリーランスの案件進捗・作業時間・売上・手数料を管理するダッシュボード。サーバー・外部API不要、ブラウザだけで動作。</p>
+      <div class="tags"><span>JavaScript</span><span>SVGグラフ</span><span>localStorage</span></div>
+      <div class="links"><a href="dashboard/">デモを見る</a><a href="https://github.com/maromi0628/Portfolio/tree/main/dashboard">コード</a></div>
+    </article>
+  </div>
+
+  <footer>© maromi0628</footer>
+</div>
+</body>
+</html>

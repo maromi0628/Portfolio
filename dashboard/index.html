@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>案件・売上ダッシュボード（デモ）</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="top">
+  <h1>案件・売上ダッシュボード <span class="sub">フリーランス・副業向け（デモ：架空データ）</span></h1>
+  <div class="actions">
+    <span id="dirty" class="badge warn" hidden>未書き出しの変更あり</span>
+    <button id="export" class="btn">データを書き出す</button>
+    <button id="reset" class="btn ghost">data.js に戻す</button>
+  </div>
+</header>
+<nav class="tabs" role="tablist">
+  <button data-tab="overview" class="active">概要</button>
+  <button data-tab="pipeline">パイプライン</button>
+  <button data-tab="candidates">候補案件</button>
+  <button data-tab="worklogs">作業ログ</button>
+  <button data-tab="sales">売上</button>
+</nav>
+<main>
+  <section id="overview" class="panel active"></section>
+  <section id="pipeline" class="panel"></section>
+  <section id="candidates" class="panel"></section>
+  <section id="worklogs" class="panel"></section>
+  <section id="sales" class="panel"></section>
+</main>
+<script src="data/data.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
