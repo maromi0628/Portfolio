@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CSV変換ツール | Portfolio</title>
+<meta name="description" content="CSVの列の選択・並べ替え・名前変更・固定値・連番を設定して、取り込み用CSVに変換するブラウザツール（Shift_JIS対応）">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div>
+    <h1>CSV変換ツール</h1>
+    <p class="muted">ネットショップの注文CSVを、別システムの取り込み形式に変換するツールのサンプルです。インストール不要で、データはブラウザの外に送信されません。</p>
+  </div>
+  <a class="back" href="../">← 制作実績へ</a>
+</header>
+
+<main>
+  <section class="card">
+    <h2><span class="step">1</span>元のCSVを読み込む</h2>
+    <div id="drop" class="drop" tabindex="0">
+      <p><strong>CSVファイルをここにドラッグ＆ドロップ</strong><br><span class="muted">またはクリックして選択（文字コードは自動判定：Shift_JIS／UTF-8）</span></p>
+      <input id="file" type="file" accept=".csv,text/csv" hidden>
+    </div>
+    <div class="row">
+      <button id="sample" class="btn ghost" type="button">サンプルデータで試す</button>
+      <span id="info" class="muted"></span>
+    </div>
+  </section>
+
+  <section class="card" id="mapCard" hidden>
+    <h2><span class="step">2</span>出力する列を設定する</h2>
+    <p class="muted">上から順に出力されます。「元の列」「固定値」「連番」から選べます。</p>
+    <div class="table-wrap">
+      <table class="map">
+        <thead><tr><th>#</th><th>出力する列名</th><th>種類</th><th>値</th><th></th></tr></thead>
+        <tbody id="mapBody"></tbody>
+      </table>
+    </div>
+    <div class="row">
+      <button id="addCol" class="btn ghost" type="button">＋ 列を追加</button>
+      <button id="preset" class="btn ghost" type="button">サンプルの変換ルールを読み込む</button>
+      <button id="saveRule" class="btn ghost" type="button">ルールを保存</button>
+      <button id="loadRule" class="btn ghost" type="button">保存したルールを読み込む</button>
+    </div>
+    <div class="opts">
+      <label><input type="checkbox" id="optTrim" checked> 前後の空白を削除</label>
+      <label><input type="checkbox" id="optDedup"> 同じ内容の行を1行にまとめる</label>
+      <label><input type="checkbox" id="optSkipEmpty" checked> 空の行を出力しない</label>
+      <label>連番の桁数 <input type="number" id="optPad" value="4" min="1" max="10"></label>
+      <label>出力の文字コード
+        <select id="optEnc"><option value="SJIS">Shift_JIS（Excel・業務ソフト向け）</option><option value="UTF8BOM">UTF-8（BOM付き）</option></select>
+      </label>
+    </div>
+  </section>
+
+  <section class="card" id="prevCard" hidden>
+    <h2><span class="step">3</span>確認して保存する</h2>
+    <p id="summary" class="muted"></p>
+    <div id="warn" class="warn" hidden></div>
+    <div class="table-wrap"><table class="prev" id="prev"></table></div>
+    <div class="row">
+      <button id="download" class="btn" type="button">変換してCSVを保存</button>
+    </div>
+  </section>
+</main>
+
+<footer class="muted">掲載している店舗・商品・氏名はすべて架空のものです。 © maromi0628</footer>
+
+<script src="vendor/encoding.min.js"></script>
+<script src="csv.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
